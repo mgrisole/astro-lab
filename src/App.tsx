@@ -1,36 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import './App.css'
+import { Astronaut } from './definitions/astronaut'
+import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid'
+import { AstronautEditionModal } from './AstronautEditionModal';
+import reactLogo from './assets/react.svg'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const astronauts: Astronaut[] = [
+    {id: 'BB789275-3D6E-47AD-B9AB-E80F142248DC', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=1', firstname: 'Jean', lastname: 'Bartik', planet: 'Sunaru'},
+    {id: '4F038669-8107-4C38-8F13-3DB52DE2684D', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=2', firstname: 'Alain', lastname: 'Touring', planet: 'Eleven'},
+    {id: '0CCAA0E2-6DB5-4130-993E-506DD815BD62', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=3', firstname: 'Kristof', lastname: 'Mahaie', planet: 'Sunev'},
+    {id: '90762351-DEB7-4DBA-899B-0814EA5B2724', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=4', firstname: 'Marie', lastname: 'Curry', planet: 'Eleven'},
+    {id: '8F7C3953-6FFD-469C-A3E8-8A6523A87B34', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=5', firstname: 'Jason', lastname: 'Quantum', planet: 'Yrucrem'}
+  ]
 
   return (
-    <div className="App">
-      <button className="btn btn-primary">Button test</button>
-      <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className="overflow-x-auto w-full">
+      <table className="table w-full">
+        <thead>
+          <tr>
+            <th>
+              <label>
+                <input type="checkbox" className="checkbox" onChange={console.log}/>
+              </label>
+            </th>
+            <th>Astronaut</th>
+            <th>Planet</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          { 
+            astronauts.map(astronaut => 
+              <tr>
+                <th>
+                  <label>
+                    <input type="checkbox" className="checkbox" />
+                  </label>
+                </th>
+                <td>
+                  <div className="flex items-center space-x-3">
+                    <div className='flex items-center'>
+                      <img src={astronaut.profilePic} className="logo" alt="Vite logo" />
+                      <div className="font-bold">{astronaut.firstname} {astronaut.lastname}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>{astronaut.planet}</td>
+                <td>
+                  <div className='flex gap-3 justify-center'>
+                    <button>
+                      <PencilSquareIcon className="h-5 w-5 hover:text-blue-500"/>
+                    </button>
+                    <button>
+                      <TrashIcon className="h-5 w-5 hover:text-blue-500"/>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            )
+          }
+        </tbody>
+        
+      </table>
+
+      <AstronautEditionModal astronaut={astronauts[0]} />
     </div>
   )
 }
