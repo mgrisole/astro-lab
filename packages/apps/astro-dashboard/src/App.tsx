@@ -1,6 +1,6 @@
-import { Astronaut } from './definitions/astronaut'
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid'
 import { AstronautEditionModal } from './AstronautEditionModal';
+import type { Astronaut } from '@astro-lab/definitions'
 
 function App() {
 
