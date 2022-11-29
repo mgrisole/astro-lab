@@ -23,8 +23,8 @@ export function AstronautList() {
         </thead>
         <tbody>
         {
-          astronauts.map(astronaut =>
-            <tr>
+          astronauts.map(({profile_pic, lastname, firstname, planet_id, id}) =>
+            <tr key={id}>
               <th>
                 <label>
                   <input type="checkbox" className="checkbox" />
@@ -33,12 +33,12 @@ export function AstronautList() {
               <td>
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12">
-                    <img src={astronaut.profile_pic}/>
+                    <img src={profile_pic}/>
                   </div>
-                  <div className="font-bold">{astronaut.firstname} {astronaut.lastname}</div>
+                  <div className="font-bold">{firstname} {lastname}</div>
                 </div>
               </td>
-              <td>{astronaut.planet_id}</td>
+              <td>{planet_id}</td>
               <td>
                 <div className='flex gap-3 justify-center'>
                   <button>

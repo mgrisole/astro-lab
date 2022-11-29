@@ -4,3 +4,4 @@
 
 export * from "./domains/astronaut/create";
 export * from "./domains/astronaut/fetch-all";
+export * from "./domains/planet/fetch-all";

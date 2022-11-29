@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "generate-barrels": "barrelsby -c barrelsby.json"
+    "generate-barrels": "barrelsby -c barrelsby.json",
+    "postinstall": "prisma generate"
   },
   "keywords": [],
   "author": "Maxime Grisole",
