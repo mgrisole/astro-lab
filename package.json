@@ -4,7 +4,7 @@
   "description": "astro-lab monorepo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nx run-many --target=dev --all"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/mgrisole/astro-lab/issues"
   },
-  "homepage": "https://github.com/mgrisole/astro-lab#readme"
+  "homepage": "https://github.com/mgrisole/astro-lab#readme",
+  "devDependencies": {
+    "@nrwl/workspace": "latest",
+    "nx": "latest",
+    "@nrwl/cli": "latest",
+    "typescript": "4.2.4"
+  }
 }

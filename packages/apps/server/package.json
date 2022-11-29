@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "astro-lab server handle communications towards our astronaut database",
   "scripts": {
-    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/main.ts"
+    "dev": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/main.ts"
   },
   "author": "Maxime Grisole",
   "license": "ISC",
