@@ -3,3 +3,7 @@ node_modules
 #.env
 *.dylib.node
 src/generated/client/*.js
+runtime
+*.js
+*.d.ts
+*.prisma
