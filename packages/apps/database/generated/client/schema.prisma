@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Planet {
+  id                   String      @id @default(cuid())
+  name                 String      @unique
+  distance_from_eleven Float       @default(0)
+  astronauts           Astronaut[]
+}
+
+model Astronaut {
+  id          String @id @default(cuid())
+  firstname   String
+  lastname    String
+  planet_id   String
+  profile_pic String
+  planet      Planet @relation(fields: [planet_id], references: [id])
+}
+
+// Not supported with current connector (https://github.com/prisma/prisma/issues/2219)
+// enum PlanetName {
+//   ELEVEN
+//   RETIPUJ
+//   YRUCREM
+//   SUNEV
+//   SUNARU
+// }

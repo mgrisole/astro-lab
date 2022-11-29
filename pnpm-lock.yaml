@@ -16,7 +16,7 @@ importers:
 
   packages/apps/astro-dashboard:
     specifiers:
-      '@astro-lab/prisma-client': workspace
+      '@astro-lab/definitions': workspace
       '@heroicons/react': ^2.0.13
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
@@ -41,7 +41,7 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       rxjs: 7.5.7
     devDependencies:
-      '@astro-lab/prisma-client': link:../../libs/prisma-client
+      '@astro-lab/definitions': link:../../libs/definitions
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
@@ -53,31 +53,36 @@ importers:
 
   packages/apps/database:
     specifiers:
-      '@astro-lab/prisma-client': workspace
       '@prisma/client': ^4.6.1
+      '@types/fs-extra': ^9.0.13
       '@types/node': ^18.11.9
       '@types/sqlite3': ^3.1.8
       barrelsby: ^2.5.1
+      fs-extra: ^11.0.0
       prisma: ^4.6.1
       sqlite3: ^5.1.2
       ts-node: ^10.9.1
       typescript: ^4.9.3
     dependencies:
-      '@astro-lab/prisma-client': link:../../libs/prisma-client
       '@prisma/client': 4.6.1_prisma@4.6.1
       sqlite3: 5.1.2
     devDependencies:
+      '@types/fs-extra': 9.0.13
       '@types/node': 18.11.9
       '@types/sqlite3': 3.1.8
       barrelsby: 2.5.1
+      fs-extra: 11.0.0
       prisma: 4.6.1
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
       typescript: 4.9.3
 
+  packages/apps/database/generated/client:
+    specifiers: {}
+
   packages/apps/server:
     specifiers:
       '@astro-lab/database': workspace
-      '@astro-lab/prisma-client': workspace
+      '@astro-lab/definitions': workspace
       '@types/koa': ^2.13.5
       '@types/koa-bodyparser': ^4.3.10
       '@types/koa-logger': ^3.1.2
@@ -100,7 +105,7 @@ importers:
       koa-router: 12.0.0
       koa2-cors: 2.0.6
     devDependencies:
-      '@astro-lab/prisma-client': link:../../libs/prisma-client
+      '@astro-lab/definitions': link:../../libs/definitions
       '@types/koa': 2.13.5
       '@types/koa-bodyparser': 4.3.10
       '@types/koa-logger': 3.1.2
@@ -111,7 +116,7 @@ importers:
       ts-node: 10.9.1_wup25etrarvlqkprac7h35hj7u
       typescript: 4.9.3
 
-  packages/libs/prisma-client:
+  packages/libs/definitions:
     specifiers: {}
 
 packages:
@@ -1124,6 +1129,12 @@ packages:
       '@types/express-serve-static-core': 4.17.31
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.0
+    dev: true
+
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 18.11.9
     dev: true
 
   /@types/graceful-fs/4.1.5:
@@ -2501,6 +2512,15 @@ packages:
   /fs-extra/10.1.0:
     resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
     engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
+  /fs-extra/11.0.0:
+    resolution: {integrity: sha512-4YxRvMi4P5C3WQTvdRfrv5UVqbISpqjORFQAW5QPiKAauaxNCwrEdIi6pG3tDFhKKpMen+enEhHIzB/tvIO+/w==}
+    engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0

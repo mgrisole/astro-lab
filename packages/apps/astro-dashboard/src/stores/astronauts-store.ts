@@ -1,6 +1,6 @@
 import {BehaviorSubject} from "rxjs";
-import {Astronaut} from "@astro-lab/prisma-client";
 import axios from "axios";
+import {Astronaut} from "@astro-lab/definitions";
 
 export const astronauts$ = new BehaviorSubject<Astronaut[]>([])
 

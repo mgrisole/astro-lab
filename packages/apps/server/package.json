@@ -16,7 +16,7 @@
     "@astro-lab/database": "workspace"
   },
   "devDependencies": {
-    "@astro-lab/prisma-client": "workspace",
+    "@astro-lab/definitions": "workspace",
     "@types/koa": "^2.13.5",
     "@types/koa-bodyparser": "^4.3.10",
     "@types/koa-logger": "^3.1.2",

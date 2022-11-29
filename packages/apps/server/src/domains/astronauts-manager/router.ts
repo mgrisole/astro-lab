@@ -1,6 +1,6 @@
 import Router from 'koa-router'
-import {Astronaut} from "@astro-lab/prisma-client";
 import {createAstronaut, fetchAllAstronauts} from "@astro-lab/database";
+import {Astronaut} from "@astro-lab/definitions";
 
 const router = new Router({
   prefix: '/astronaut-manager/'
