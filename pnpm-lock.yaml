@@ -7,7 +7,7 @@ importers:
 
   packages/apps/astro-dashboard:
     specifiers:
-      '@astro-lab/definitions': workspace:^0.0.0
+      '@astro-lab/prisma-client': workspace
       '@heroicons/react': ^2.0.13
       '@types/react': ^18.0.24
       '@types/react-dom': ^18.0.8
@@ -15,9 +15,11 @@ importers:
       autoprefixer: ^10.4.13
       axios: ^1.2.0
       daisyui: ^2.42.1
+      observable-hooks: ^4.2.1
       postcss: ^8.4.19
       react: ^18.2.0
       react-dom: ^18.2.0
+      rxjs: ^7.5.7
       tailwindcss: ^3.2.4
       typescript: ^4.6.4
       vite: ^3.2.3
@@ -25,10 +27,12 @@ importers:
       '@heroicons/react': 2.0.13_react@18.2.0
       axios: 1.2.0
       daisyui: 2.42.1_2lwn2upnx27dqeg6hqdu7sq75m
+      observable-hooks: 4.2.1_eg6o7gurzkmlt7b63gbvziog74
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      rxjs: 7.5.7
     devDependencies:
-      '@astro-lab/definitions': link:../../libs/definitions
+      '@astro-lab/prisma-client': link:../../libs/prisma-client
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
       '@vitejs/plugin-react': 2.2.0_vite@3.2.4
@@ -2283,6 +2287,18 @@ packages:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}
     dev: false
 
+  /observable-hooks/4.2.1_eg6o7gurzkmlt7b63gbvziog74:
+    resolution: {integrity: sha512-urZ0D28+oH+SRLQoCDd68rvvJIqK3zgH/Is0nubXDc+CF6d8rbDBN7A2n9mPAax7BtCRlwtnCBnkj8UwXRDf1Q==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      rxjs: '>=6.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      rxjs: 7.5.7
+    dev: false
+
   /on-finished/2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -2592,6 +2608,12 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
 
+  /rxjs/7.5.7:
+    resolution: {integrity: sha512-z9MzKh/UcOqB3i20H6rtrlaE/CgjLOvheWK/9ILrbhROGTweAi1BaFsTT9FbwZi5Trr1qNRs+MXkhmR06awzQA==}
+    dependencies:
+      tslib: 2.4.1
+    dev: false
+
   /safe-buffer/5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
     dev: false
@@ -2878,6 +2900,10 @@ packages:
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
+
+  /tslib/2.4.1:
+    resolution: {integrity: sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==}
+    dev: false
 
   /tsscmp/1.0.6:
     resolution: {integrity: sha512-LxhtAkPDTkVCMQjt2h6eBVY28KCjikZqZfMcC15YBeNjkgUpdCfBu5HoiOTDu86v6smE8yOjyEktJ8hlbANHQA==}

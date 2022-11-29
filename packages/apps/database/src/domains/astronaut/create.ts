@@ -2,9 +2,10 @@ import {Astronaut, PrismaClient} from '@astro-lab/prisma-client'
 
 const prisma = new PrismaClient()
 
-async function create(astronaut: AstronautBuilder) {
+const create = async (astronaut: AstronautBuilder) => {
   await prisma.astronaut.create({data: astronaut})
 }
+
 
 export const createAstronaut = (astronaut: AstronautBuilder) => create(astronaut)
   .then(async () => {

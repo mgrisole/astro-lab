@@ -1,0 +1,4 @@
+- $`pnpm i`
+  - Notes: 
+    - WARN deprecated @npmcli/move-file@1.1.2 
+      - Comes from sqlite3 @astro-lab/database dependency (https://github.com/nodejs/node-gyp/issues/2756)
