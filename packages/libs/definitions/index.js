@@ -80,8 +80,8 @@ const regularDirname = hasDirname && fs.existsSync(path.join(__dirname, 'schema.
 
 // if the client has been bundled, we need to look for the folders
 const foundDirname = !regularDirname && findSync(process.cwd(), [
-    "../../libs/prisma-client",
-    "../libs/prisma-client",
+    "src/generated/client",
+    "generated/client",
 ], ['d'], ['d'], 1)[0]
 
 const dirname = regularDirname || foundDirname || __dirname
@@ -137,7 +137,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/MAXIME/lab/astro-lab/packages/libs/prisma-client",
+      "value": "/Users/MAXIME/lab/astro-lab/packages/apps/database/src/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -148,10 +148,10 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../apps/database/.env"
+    "rootEnvPath": "../../../.env",
+    "schemaEnvPath": "../../../.env"
   },
-  "relativePath": "../../apps/database/prisma",
+  "relativePath": "../../../prisma",
   "clientVersion": "4.6.1",
   "engineVersion": "694eea289a8462c80264df36757e4fdc129b1b32",
   "datasourceNames": [
@@ -178,6 +178,6 @@ exports.PrismaClient = PrismaClient
 Object.assign(exports, Prisma)
 
 path.join(__dirname, "libquery_engine-darwin.dylib.node");
-path.join(process.cwd(), "../../libs/prisma-client/libquery_engine-darwin.dylib.node")
+path.join(process.cwd(), "src/generated/client/libquery_engine-darwin.dylib.node")
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "../../libs/prisma-client/schema.prisma")
+path.join(process.cwd(), "src/generated/client/schema.prisma")
