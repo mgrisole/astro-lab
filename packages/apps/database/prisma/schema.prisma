@@ -19,11 +19,12 @@ model Planet {
 }
 
 model Astronaut {
-  id        String     @id @default(cuid())
-  firstname String
-  lastname  String
-  planet_id String
-  planet    Planet  @relation(fields: [planet_id], references: [id])
+  id          String @id @default(cuid())
+  firstname   String
+  lastname    String
+  planet_id   String
+  profile_pic String
+  planet      Planet @relation(fields: [planet_id], references: [id])
 }
 
 // Not supported with current connector (https://github.com/prisma/prisma/issues/2219)

@@ -93,7 +93,8 @@ exports.Prisma.AstronautScalarFieldEnum = makeEnum({
   id: 'id',
   firstname: 'firstname',
   lastname: 'lastname',
-  planet_id: 'planet_id'
+  planet_id: 'planet_id',
+  profile_pic: 'profile_pic'
 });
 
 exports.Prisma.PlanetScalarFieldEnum = makeEnum({

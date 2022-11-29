@@ -1,1 +1,1 @@
-export type Planet = 'Eleven' | 'Retipuj' | 'Yrucrem' | 'Sunev' | 'Sunaru';
+export type Planet = 'Eleven' | 'Retipuj' | 'Sunev' | 'Sunaru';

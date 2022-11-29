@@ -2,6 +2,7 @@ import Koa from "koa";
 import bodyParser from "koa-bodyparser";
 import cors from "koa2-cors";
 import logger from "koa-logger";
+import {AstronautManagerRouter} from "./domains/astronauts-manager/router";
 
 const app = new Koa();
 
@@ -11,9 +12,12 @@ app.use(bodyParser());
 app.use(
   cors({
     origin: "*"
-  })
+  }),
 );
 app.use(logger());
+
+app.use(AstronautManagerRouter.routes())
+app.use(AstronautManagerRouter.allowedMethods())
 
 const server = app
   .listen(PORT, async () => {

@@ -31,6 +31,7 @@ export type Astronaut = {
   firstname: string
   lastname: string
   planet_id: string
+  profile_pic: string
 }
 
 
@@ -1815,6 +1816,7 @@ export namespace Prisma {
     firstname: string | null
     lastname: string | null
     planet_id: string | null
+    profile_pic: string | null
   }
 
   export type AstronautMaxAggregateOutputType = {
@@ -1822,6 +1824,7 @@ export namespace Prisma {
     firstname: string | null
     lastname: string | null
     planet_id: string | null
+    profile_pic: string | null
   }
 
   export type AstronautCountAggregateOutputType = {
@@ -1829,6 +1832,7 @@ export namespace Prisma {
     firstname: number
     lastname: number
     planet_id: number
+    profile_pic: number
     _all: number
   }
 
@@ -1838,6 +1842,7 @@ export namespace Prisma {
     firstname?: true
     lastname?: true
     planet_id?: true
+    profile_pic?: true
   }
 
   export type AstronautMaxAggregateInputType = {
@@ -1845,6 +1850,7 @@ export namespace Prisma {
     firstname?: true
     lastname?: true
     planet_id?: true
+    profile_pic?: true
   }
 
   export type AstronautCountAggregateInputType = {
@@ -1852,6 +1858,7 @@ export namespace Prisma {
     firstname?: true
     lastname?: true
     planet_id?: true
+    profile_pic?: true
     _all?: true
   }
 
@@ -1938,6 +1945,7 @@ export namespace Prisma {
     firstname: string
     lastname: string
     planet_id: string
+    profile_pic: string
     _count: AstronautCountAggregateOutputType | null
     _min: AstronautMinAggregateOutputType | null
     _max: AstronautMaxAggregateOutputType | null
@@ -1962,6 +1970,7 @@ export namespace Prisma {
     firstname?: boolean
     lastname?: boolean
     planet_id?: boolean
+    profile_pic?: boolean
     planet?: boolean | PlanetArgs
   }
 
@@ -2694,7 +2703,8 @@ export namespace Prisma {
     id: 'id',
     firstname: 'firstname',
     lastname: 'lastname',
-    planet_id: 'planet_id'
+    planet_id: 'planet_id',
+    profile_pic: 'profile_pic'
   };
 
   export type AstronautScalarFieldEnum = (typeof AstronautScalarFieldEnum)[keyof typeof AstronautScalarFieldEnum]
@@ -2779,6 +2789,7 @@ export namespace Prisma {
     firstname?: StringFilter | string
     lastname?: StringFilter | string
     planet_id?: StringFilter | string
+    profile_pic?: StringFilter | string
     planet?: XOR<PlanetRelationFilter, PlanetWhereInput>
   }
 
@@ -2787,6 +2798,7 @@ export namespace Prisma {
     firstname?: SortOrder
     lastname?: SortOrder
     planet_id?: SortOrder
+    profile_pic?: SortOrder
     planet?: PlanetOrderByWithRelationInput
   }
 
@@ -2799,6 +2811,7 @@ export namespace Prisma {
     firstname?: SortOrder
     lastname?: SortOrder
     planet_id?: SortOrder
+    profile_pic?: SortOrder
     _count?: AstronautCountOrderByAggregateInput
     _max?: AstronautMaxOrderByAggregateInput
     _min?: AstronautMinOrderByAggregateInput
@@ -2812,6 +2825,7 @@ export namespace Prisma {
     firstname?: StringWithAggregatesFilter | string
     lastname?: StringWithAggregatesFilter | string
     planet_id?: StringWithAggregatesFilter | string
+    profile_pic?: StringWithAggregatesFilter | string
   }
 
   export type PlanetCreateInput = {
@@ -2858,6 +2872,7 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    profile_pic: string
     planet: PlanetCreateNestedOneWithoutAstronautsInput
   }
 
@@ -2866,12 +2881,14 @@ export namespace Prisma {
     firstname: string
     lastname: string
     planet_id: string
+    profile_pic: string
   }
 
   export type AstronautUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
     planet?: PlanetUpdateOneRequiredWithoutAstronautsNestedInput
   }
 
@@ -2880,12 +2897,14 @@ export namespace Prisma {
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     planet_id?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
   export type AstronautUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
   export type AstronautUncheckedUpdateManyInput = {
@@ -2893,6 +2912,7 @@ export namespace Prisma {
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
     planet_id?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
   export type StringFilter = {
@@ -2999,6 +3019,7 @@ export namespace Prisma {
     firstname?: SortOrder
     lastname?: SortOrder
     planet_id?: SortOrder
+    profile_pic?: SortOrder
   }
 
   export type AstronautMaxOrderByAggregateInput = {
@@ -3006,6 +3027,7 @@ export namespace Prisma {
     firstname?: SortOrder
     lastname?: SortOrder
     planet_id?: SortOrder
+    profile_pic?: SortOrder
   }
 
   export type AstronautMinOrderByAggregateInput = {
@@ -3013,6 +3035,7 @@ export namespace Prisma {
     firstname?: SortOrder
     lastname?: SortOrder
     planet_id?: SortOrder
+    profile_pic?: SortOrder
   }
 
   export type AstronautCreateNestedManyWithoutPlanetInput = {
@@ -3152,12 +3175,14 @@ export namespace Prisma {
     id?: string
     firstname: string
     lastname: string
+    profile_pic: string
   }
 
   export type AstronautUncheckedCreateWithoutPlanetInput = {
     id?: string
     firstname: string
     lastname: string
+    profile_pic: string
   }
 
   export type AstronautCreateOrConnectWithoutPlanetInput = {
@@ -3189,6 +3214,7 @@ export namespace Prisma {
     firstname?: StringFilter | string
     lastname?: StringFilter | string
     planet_id?: StringFilter | string
+    profile_pic?: StringFilter | string
   }
 
   export type PlanetCreateWithoutAstronautsInput = {
@@ -3229,18 +3255,21 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
   export type AstronautUncheckedUpdateWithoutPlanetInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
   export type AstronautUncheckedUpdateManyWithoutAstronautsInput = {
     id?: StringFieldUpdateOperationsInput | string
     firstname?: StringFieldUpdateOperationsInput | string
     lastname?: StringFieldUpdateOperationsInput | string
+    profile_pic?: StringFieldUpdateOperationsInput | string
   }
 
 
