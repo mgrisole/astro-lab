@@ -1,5 +1,9 @@
-import { AstronautEditionModal } from './components/AstronautEditionModal';
+import { AstronautEditionModal } from './components/astronaut-edition-modal';
 import {AstronautList} from "./components/astronaut-list";
+import {Astronaut} from "@astro-lab/definitions";
+import React, {useState} from "react";
+
+export const ModalContext = React.createContext({isOpen: false, toggle: (state: boolean) => {}});
 
 function App() {
 
@@ -10,13 +14,25 @@ function App() {
   //   {id: '90762351-DEB7-4DBA-899B-0814EA5B2724', profilePic: 'https://doodleipsum.com/100x100/avatar?shape=circle&bg=lightgray&n=4', firstname: 'Marie', lastname: 'Curry', planet: 'Eleven'},
   // ]
 
+  const [isOpen, toggle] = useState(false);
+
+  // const astronaut: Astronaut = {};
+
   return (
-    <div className="p-4 md:p-12">
+    <>
+      <ModalContext.Provider value={{isOpen, toggle}}>
+        <div className="p-4 md:p-12">
 
-      <AstronautList />
+          <div className="mb-12">
+            <button className="btn btn-accent" onClick={() => toggle(true)}>Create</button>
+          </div>
 
-      {/*<AstronautEditionModal astronaut={astronauts[0]} />*/}
-    </div>
+          <AstronautList />
+
+          <AstronautEditionModal />
+        </div>
+      </ModalContext.Provider>
+    </>
   )
 }
 

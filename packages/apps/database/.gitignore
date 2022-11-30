@@ -3,3 +3,4 @@ node_modules
 #.env
 *.dylib.node
 src/generated/client/*.js
+generated
